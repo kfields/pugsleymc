@@ -62,7 +62,6 @@ module.exports = function (ctx) {
     supportIE: false,
 
     build: {
-      distDir: '../static/mc',
       env: ctx.dev ? webenv('dev') : webenv('pro'),
       scopeHoisting: true,
       // vueRouterMode: 'history',
