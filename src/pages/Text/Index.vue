@@ -26,7 +26,7 @@ export default {
   },
   mounted () {
     const myeditor = this.myeditor = CodeMirror.fromTextArea(this.$refs.editor, {
-      theme: 'miakai',
+      // theme: 'miakai',
       mode: 'xml',
       htmlMode: true,
       lineNumbers: true,

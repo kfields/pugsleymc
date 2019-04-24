@@ -12,7 +12,8 @@ module.exports = function (ctx) {
     ],
 
     css: [
-      'app.styl'
+      'app.styl',
+      'editor.styl'
     ],
 
     extras: [

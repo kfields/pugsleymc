@@ -1,6 +1,7 @@
 <template>
   <q-page padding class="fields">
       <q-input outlined autocomplete="title" v-model="post.title" label="Title" />
+      <q-input outlined v-model="post.summary" label="Summary" />
       <q-field outlined label="Body" stack-label @click.native="editBody()">
         <template v-slot:control>
           <div class="self-center full-width no-outline" tabindex="0">{{stripTags(post.body)}}</div>
@@ -19,6 +20,7 @@ query postQuery($id: ID!) {
   post(id: $id) {
     title
     slug
+    summary
     body
   }
 }
@@ -56,8 +58,8 @@ export default {
     save () {
       this.$apollo.mutate({
         // Query
-        mutation: gql`mutation ($id: ID!, $title: String, $body: String) {
-          updatePost(id: $id, title: $title, body: $body) {
+        mutation: gql`mutation ($id: ID!, $title: String, $summary: String, $body: String) {
+          updatePost(id: $id, title: $title, summary: $summary, body: $body) {
             ok
           }
         }`,
@@ -65,6 +67,7 @@ export default {
         variables: {
           id: this.id,
           title: this.post.title,
+          summary: this.post.summary,
           body: this.post.body
         }
       })
