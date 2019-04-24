@@ -5,16 +5,17 @@ module.exports = function (name) {
   const envPath = path.resolve(__dirname, `${name}.env`)
   console.log(envPath)
   var parsedEnv = DotEnv.config({path: envPath}).parsed
-  if(parsedEnv == undefined) {
-    parsedEnv = process.env
-  }
   // console.log(parsedEnv)
-  // Let's stringify our variables
-  for (key in parsedEnv) {
-    if (typeof parsedEnv[key] === 'string') {
-      parsedEnv[key] = JSON.stringify(parsedEnv[key])
+  const env = Object.assign({}, process.env)
+  Object.assign(env, parsedEnv)
+  console.log(env)
+    // Let's stringify our variables
+
+  for (key in env) {
+    if (typeof env[key] === 'string') {
+      env[key] = JSON.stringify(env[key])
     }
   }
-  console.log(parsedEnv)
-  return parsedEnv
+
+  return env
 }
