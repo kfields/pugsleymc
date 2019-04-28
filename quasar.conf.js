@@ -8,7 +8,8 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     boot: [
       'axios',
-      'apollo'
+      'apollo',
+      'pugsley'
     ],
 
     css: [
@@ -65,7 +66,7 @@ module.exports = function (ctx) {
     build: {
       env: ctx.dev ? webenv('dev') : webenv('pro'),
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
