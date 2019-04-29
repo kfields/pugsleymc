@@ -2,7 +2,6 @@
   <q-page padding>
     <div style="width: 500px; max-width: 90vw;">
       <q-list>
-        <q-item-label style="font-size: 1.25rem;">Pages</q-item-label>
         <q-item v-for="edge in allPosts.edges" :key="edge.id" :to="`/posts/${edge.node.id}`">
           <q-item-section avatar>
             <q-icon name="mdi-file-document-outline" inverted color="grey-6" />
@@ -43,6 +42,7 @@ export default {
 
   data () {
     return {
+      title: 'Pages',
       authorId: this.$route.params.authorId
     }
   },

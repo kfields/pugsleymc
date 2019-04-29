@@ -2,7 +2,6 @@
   <q-page padding>
     <div style="width: 500px; max-width: 90vw;">
       <q-list>
-        <q-item-label style="font-size: 1.25rem;">Users</q-item-label>
         <q-item v-for="edge in allUsers.edges" :key="edge.id" :to="`/users/${edge.node.id}`">
           <q-item-section avatar>
             <q-icon name="mdi-account" inverted color="grey-6" />

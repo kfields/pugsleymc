@@ -9,6 +9,10 @@
       <q-icon name="mdi-chevron-left" />
     </q-btn>
 
+    <q-toolbar-title shrink>
+      {{pageTitle}}
+    </q-toolbar-title>
+
     <q-btn
       flat
       dense

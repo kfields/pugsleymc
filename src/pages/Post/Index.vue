@@ -15,16 +15,7 @@ import { UiMixin, PageMixin } from 'src/mixins'
 import Toolbar from './Toolbar'
 
 import gql from 'graphql-tag'
-const postQuery = gql`
-query postQuery($id: ID!) {
-  post(id: $id) {
-    title
-    slug
-    summary
-    body
-  }
-}
-`
+
 export default {
   mixins: [ UiMixin, PageMixin ],
   props: ['id'],
@@ -32,7 +23,15 @@ export default {
   },
   apollo: {
     post: {
-      query: postQuery,
+      query: gql`
+        query postQuery($id: ID!) {
+          post(id: $id) {
+            title
+            slug
+            summary
+            body
+          }
+        }`,
       variables () {
         return {
           id: this.postId
@@ -58,11 +57,12 @@ export default {
     save () {
       this.$apollo.mutate({
         // Query
-        mutation: gql`mutation ($id: ID!, $title: String, $summary: String, $body: String) {
-          updatePost(id: $id, title: $title, summary: $summary, body: $body) {
-            ok
-          }
-        }`,
+        mutation: gql`
+          mutation ($id: ID!, $title: String, $summary: String, $body: String) {
+            updatePost(id: $id, title: $title, summary: $summary, body: $body) {
+              ok
+            }
+          }`,
         // Parameters
         variables: {
           id: this.id,
