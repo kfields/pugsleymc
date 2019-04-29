@@ -16,7 +16,7 @@
       @click="page.save()"
       aria-label="Save"
     >
-      <q-icon name="save" />
+      <q-icon name="note_add" />
     </q-btn>
 
   </q-toolbar>

@@ -2,6 +2,7 @@
   <q-page padding>
     <div style="width: 500px; max-width: 90vw;">
       <q-list>
+        <q-item-label style="font-size: 1.25rem;">Users</q-item-label>
         <q-item v-for="edge in allUsers.edges" :key="edge.id" :to="`/users/${edge.node.id}`">
           <q-item-section avatar>
             <q-icon name="mdi-account" inverted color="grey-6" />
@@ -9,7 +10,7 @@
           <q-item-section>
             {{ edge.node.firstName }} {{ edge.node.lastName }}
           </q-item-section>
-      </q-item>
+        </q-item>
       </q-list>
     </div>
   </q-page>
@@ -20,6 +21,7 @@
 
 <script>
 import { UiMixin, PageMixin } from 'src/mixins'
+import Toolbar from './Toolbar'
 
 import gql from 'graphql-tag'
 const userQuery = gql`
@@ -49,6 +51,12 @@ export default {
     allUsers: {
       query: userQuery,
       prefetch: false
+    }
+  },
+  methods: {
+    onSwitch () {
+      this.setPage(this)
+      this.setToolbar(Toolbar)
     }
   }
 }

@@ -9,9 +9,7 @@
       <q-icon name="mdi-chevron-left" />
     </q-btn>
 
-    <q-toolbar-title>
-      {{pageTitle}}
-          <q-btn
+    <q-btn
       flat
       dense
       round
@@ -20,8 +18,6 @@
     >
       <q-icon name="save" />
     </q-btn>
-
-    </q-toolbar-title>
 
   </q-toolbar>
 </template>
