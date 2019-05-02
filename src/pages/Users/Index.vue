@@ -1,6 +1,7 @@
 <template>
   <q-page padding>
-    <div style="width: 500px; max-width: 90vw;">
+    <div v-if="$apollo.loading">Loading..</div>
+    <div v-else style="width: 500px; max-width: 90vw;">
       <q-list>
         <q-item v-for="edge in allUsers.edges" :key="edge.id" :to="`/users/${edge.node.id}`">
           <q-item-section avatar>
@@ -49,7 +50,8 @@ export default {
   apollo: {
     allUsers: {
       query: userQuery,
-      prefetch: false
+      prefetch: false,
+      fetchPolicy: 'network-only'
     }
   },
   methods: {

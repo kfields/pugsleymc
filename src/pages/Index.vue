@@ -1,6 +1,7 @@
 <template>
   <q-page padding>
-    <div style="width: 500px; max-width: 90vw;">
+    <div v-if="$apollo.loading">Loading..</div>
+    <div v-else style="width: 500px; max-width: 90vw;">
       <q-list>
         <q-item-label style="font-size: 1.25rem;">Recent Edits</q-item-label>
         <q-item v-for="edge in allPosts.edges" :key="edge.id" :to="`/posts/${edge.node.id}`">
@@ -51,6 +52,7 @@ export default {
     allPosts: {
       query: postQuery,
       prefetch: false,
+      fetchPolicy: 'network-only',
       variables () {
         return { authorId: this.authorId }
       }

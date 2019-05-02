@@ -48,10 +48,6 @@ export default {
   beforeDestroy () {
   },
   methods: {
-    editBody () {
-      this.setEdited({ object: this.user, prop: 'body' })
-      this.$router.push('/html')
-    },
     save () {
       this.$apollo.mutate({
         // Query

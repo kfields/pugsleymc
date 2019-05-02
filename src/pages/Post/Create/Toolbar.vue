@@ -17,10 +17,10 @@
       flat
       dense
       round
-      @click="$router.push('/posts/create')"
+      @click="page.save()"
       aria-label="Save"
     >
-      <q-icon name="note_add" />
+      <q-icon name="save" />
     </q-btn>
 
   </q-toolbar>

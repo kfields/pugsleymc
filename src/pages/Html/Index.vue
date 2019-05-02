@@ -31,13 +31,14 @@ import {
 
 export default {
   mixins: [ UiMixin, PageMixin ],
-  props: [],
+  props: ['object', 'prop'],
   components: {
     EditorContent
   },
   data () {
     return {
       myeditor: new Editor({
+        content: this.object[this.prop],
         extensions: [
           new Blockquote(),
           new BulletList(),
@@ -57,16 +58,14 @@ export default {
           new Underline(),
           new Image(),
           new History()
-        ],
-        content: 'Hi'
+        ]
       })
     }
   },
   mounted () {
-    this.myeditor.setContent(this.edited.object[this.edited.prop])
   },
   beforeDestroy () {
-    this.edited.object[this.edited.prop] = this.myeditor.getHTML()
+    this.object[this.prop] = this.myeditor.getHTML()
     this.myeditor.destroy()
   },
   methods: {

@@ -13,8 +13,9 @@ const routes = [
     path: '/',
     component: () => import('layouts/SimpleLayout.vue'),
     children: [
-      { path: 'posts/:id', component: () => import('pages/Post/Index.vue'), props: true },
-      { path: 'html', component: () => import('pages/Html/Index.vue') },
+      { path: 'posts/create', component: () => import('pages/Post/Create/Index.vue'), props: true },
+      { path: 'posts/:id', component: () => import('pages/Post/Update/Index.vue'), props: true },
+      { path: 'html', name: 'html', component: () => import('pages/Html/Index.vue'), props: true },
       { path: 'text', component: () => import('pages/Text/Index.vue') },
       { path: 'users/:id', component: () => import('pages/User/Index.vue'), props: true }
     ]
