@@ -35,7 +35,7 @@ export default {
   },
   data () {
     return {
-      title: 'Page',
+      title: 'Image',
       imageId: this.$route.params.id
     }
   },

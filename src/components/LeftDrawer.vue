@@ -22,7 +22,7 @@
         </q-item-section>
       </q-item>
 
-      <q-item to="/posts">
+      <q-item to="/pages">
         <q-item-section avatar>
           <q-icon name="mdi-folder-open" />
         </q-item-section>

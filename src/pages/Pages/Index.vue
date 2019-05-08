@@ -3,7 +3,7 @@
     <div v-if="$apollo.loading">Loading..</div>
     <div v-else style="width: 500px; max-width: 90vw;">
       <q-list>
-        <q-item v-for="edge in allPosts.edges" :key="edge.id" :to="`/posts/${edge.node.id}`">
+        <q-item v-for="edge in allPosts.edges" :key="edge.id" :to="`/pages/${edge.node.id}`">
           <q-item-section avatar>
             <q-icon name="mdi-file-document-outline" inverted color="grey-6" />
           </q-item-section>

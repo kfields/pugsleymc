@@ -37,7 +37,7 @@ query imageQuery {
 }
 `
 export default {
-  name: 'Posts',
+  name: 'Images',
   mixins: [ UiMixin, PageMixin ],
 
   data () {

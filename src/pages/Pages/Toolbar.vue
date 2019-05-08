@@ -17,7 +17,7 @@
       flat
       dense
       round
-      @click="$router.push('/posts/create')"
+      @click="$router.push('/pages/create')"
       aria-label="Save"
     >
       <q-icon name="note_add" />

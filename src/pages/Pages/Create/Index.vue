@@ -66,7 +66,7 @@ export default {
         console.log(data)
         this.id = data.data.createPost.id
         this.$q.notify('Page Created')
-        // this.$router.push(`/posts/${this.id}`)
+        // this.$router.push(`/pages/${this.id}`)
         this.$router.go(-1)
       })
     },
