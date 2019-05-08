@@ -2,9 +2,9 @@ import ApolloClient from 'apollo-boost'
 import VueApollo from 'vue-apollo'
 
 // "async" is optional
-export default async ({ app, Vue }) => {
+export default async ({ app, store, Vue }) => {
   const apolloClient = new ApolloClient({
-    uri: process.env.GRAPHQL_URL,
+    uri: process.env.SERVER_URL + '/graphql/',
     fetchOptions: {
       credentials: 'include'
     },
@@ -30,4 +30,5 @@ export default async ({ app, Vue }) => {
   })
   Vue.use(VueApollo)
   app.apolloProvider = apolloProvider
+  store.state.apolloProvider = apolloProvider
 }

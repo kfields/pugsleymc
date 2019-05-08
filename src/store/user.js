@@ -1,5 +1,6 @@
-import axios from 'axios'
+// import axios from 'axios'
 import jwtDecode from 'jwt-decode'
+import gql from 'graphql-tag'
 
 const state = {
   isLoggedIn: false,
@@ -17,6 +18,7 @@ const getters = {
 }
 
 const actions = {
+  /*
   logIn: ({ commit }, { username, password }) => {
     commit('logIn') // show spinner
     return new Promise(resolve => {
@@ -35,6 +37,32 @@ const actions = {
         .catch(function (error) {
           console.log(error)
         })
+    })
+  }, */
+  logIn: (info, { username, password }) => {
+    const { commit, rootState } = info
+    console.log(info)
+    commit('logIn') // show spinner
+    return new Promise(resolve => {
+      rootState.apolloProvider.defaultClient.mutate({
+        // Query
+        mutation: gql`
+          mutation ($username: String, $password: String) {
+            logIn(username: $username, password: $password) {
+              token
+            }
+          }`,
+        // Parameters
+        variables: {
+          username,
+          password
+        }
+      }).then((data) => {
+        console.log(data)
+        state.isLoggedIn = true
+        commit('logInSuccess', data.data.logIn)
+        resolve()
+      })
     })
   },
   logOut: ({ commit }) => {

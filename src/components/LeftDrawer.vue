@@ -31,6 +31,15 @@
         </q-item-section>
       </q-item>
 
+      <q-item to="/images">
+        <q-item-section avatar>
+          <q-icon name="mdi-folder-image" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Images</q-item-label>
+        </q-item-section>
+      </q-item>
+
     </q-list>
   </q-drawer>
 </template>
