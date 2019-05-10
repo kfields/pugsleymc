@@ -11,6 +11,8 @@ export default {
       }
     },
     ...mapGetters([
+      'view',
+      'viewTitle',
       'page',
       'pageTitle',
       'toolbar',
@@ -20,6 +22,8 @@ export default {
   },
   methods: {
     ...mapActions([
+      'setView',
+      'setViewTitle',
       'setPage',
       'setPageTitle',
       'setLeftDrawerOpen',

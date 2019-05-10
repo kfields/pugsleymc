@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     onSwitch () {
-      this.setPage(this)
+      this.setView(this)
       this.setToolbar(Toolbar)
     }
   }

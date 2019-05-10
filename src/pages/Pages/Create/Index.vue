@@ -36,13 +36,12 @@ export default {
     next(vm => {
       console.log(from)
       if (from.name !== 'html') {
-        // vm.setEdited(null)
         vm.post = { title: '', summary: '', body: '' }
       }
     })
   },
   beforeRouteLeave (to, from, next) {
-    this.setEdited(this.post)
+    this.setPage(this.post)
     console.log('leaving')
     next()
   },
@@ -71,9 +70,9 @@ export default {
       })
     },
     onSwitch () {
-      this.setPage(this)
+      this.setView(this)
       this.setToolbar(Toolbar)
-      var post = this.edited
+      var post = this.page
       console.log('on switch')
       if (post) {
         console.log('yes')

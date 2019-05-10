@@ -9,6 +9,7 @@ module.exports = function (ctx) {
     boot: [
       'axios',
       'apollo',
+      'lazyload',
       'pugsley'
     ],
 
@@ -45,7 +46,9 @@ module.exports = function (ctx) {
         'QItemSection',
         'QItemLabel',
         'QInput',
-        'QField'
+        'QField',
+        'QImg',
+        'QUploader'
       ],
 
       directives: [

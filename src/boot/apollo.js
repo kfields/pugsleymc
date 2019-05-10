@@ -1,9 +1,23 @@
 import ApolloClient from 'apollo-boost'
 import VueApollo from 'vue-apollo'
 
+const defaultOptions = {
+  watchQuery: {
+    fetchPolicy: 'cache-and-network',
+    errorPolicy: 'ignore'
+  },
+  query: {
+    fetchPolicy: 'network-only',
+    errorPolicy: 'all'
+  },
+  mutate: {
+    errorPolicy: 'all'
+  }
+}
+
 // "async" is optional
 export default async ({ app, store, Vue }) => {
-  const apolloClient = new ApolloClient({
+  const client = new ApolloClient({
     uri: process.env.SERVER_URL + '/graphql/',
     fetchOptions: {
       credentials: 'include'
@@ -25,8 +39,10 @@ export default async ({ app, store, Vue }) => {
       }
     }
   })
+  client.defaultOptions = defaultOptions
+
   const apolloProvider = new VueApollo({
-    defaultClient: apolloClient
+    defaultClient: client
   })
   Vue.use(VueApollo)
   app.apolloProvider = apolloProvider

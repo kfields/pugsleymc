@@ -28,6 +28,7 @@ export default {
             body
           }
         }`,
+      fetchPolicy: 'network-only',
       variables () {
         return {
           id: this.postId
@@ -84,7 +85,7 @@ export default {
       })
     },
     onSwitch () {
-      this.setPage(this)
+      this.setView(this)
       this.setToolbar(Toolbar)
     },
     stripTags (str) {

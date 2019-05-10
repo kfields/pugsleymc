@@ -30,6 +30,7 @@ import {
 } from 'tiptap-extensions'
 
 export default {
+  name: 'Html',
   mixins: [ UiMixin, PageMixin ],
   props: ['object', 'prop'],
   components: {
@@ -38,7 +39,7 @@ export default {
   data () {
     return {
       myeditor: new Editor({
-        content: this.object[this.prop],
+        // content: this.edited.object[this.edited.prop],
         extensions: [
           new Blockquote(),
           new BulletList(),
@@ -63,13 +64,18 @@ export default {
     }
   },
   mounted () {
+    this.myeditor.setContent(this.edited.object[this.edited.prop])
   },
   beforeDestroy () {
-    this.object[this.prop] = this.myeditor.getHTML()
+    this.edited.object[this.edited.prop] = this.myeditor.getHTML()
     this.myeditor.destroy()
   },
   methods: {
+    editText () {
+      this.$router.push({ name: 'text', params: { object: this.object, prop: 'body', back: this.$route } })
+    },
     onSwitch () {
+      this.setView(this)
       this.setEditor(this.myeditor)
       this.setToolbar(Toolbar)
     }

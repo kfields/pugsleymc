@@ -26,6 +26,7 @@ export default {
             filename
           }
         }`,
+      fetchPolicy: 'network-only',
       variables () {
         return {
           id: this.imageId
@@ -80,7 +81,7 @@ export default {
       })
     },
     onSwitch () {
-      this.setPage(this)
+      this.setView(this)
       this.setToolbar(Toolbar)
     }
   }

@@ -1,14 +1,16 @@
 <template>
   <q-page padding>
-    <FilePond ref="pond" :v-model="files" :server="server" />
+    <q-uploader
+      :url="server"
+      label="Drag and drop or add from computer"
+      multiple
+      accept=".jpg, image/*"
+      style="max-width: 300px"
+    />
   </q-page>
 </template>
 
 <script>
-import VueFilePond from 'vue-filepond'
-import 'filepond/dist/filepond.min.css'
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
-import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css'
 
 import { UiMixin, PageMixin } from 'src/mixins'
 import Toolbar from './Toolbar'
@@ -18,12 +20,11 @@ export default {
   mixins: [ UiMixin, PageMixin ],
   props: [],
   components: {
-    FilePond: VueFilePond(FilePondPluginImagePreview)
   },
   data () {
     return {
       title: 'Add Images',
-      server: process.env.SERVER_URL + '/filepond',
+      server: process.env.SERVER_URL + '/images/upload',
       files: []
     }
   },
@@ -40,7 +41,7 @@ export default {
   },
   methods: {
     onSwitch () {
-      this.setPage(this)
+      this.setView(this)
       this.setToolbar(Toolbar)
     }
   }

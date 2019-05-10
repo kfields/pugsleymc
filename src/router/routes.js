@@ -19,7 +19,7 @@ const routes = [
       { path: 'images/create', component: () => import('pages/Images/Create/Index.vue'), props: true },
       { path: 'images/:id', component: () => import('pages/Images/Update/Index.vue'), props: true },
       { path: 'html', name: 'html', component: () => import('pages/Html/Index.vue'), props: true },
-      { path: 'text', component: () => import('pages/Text/Index.vue') },
+      { path: 'text', name: 'text', component: () => import('pages/Text/Index.vue'), props: true },
       { path: 'users/:id', component: () => import('pages/Users/Update/Index.vue'), props: true }
     ]
   }

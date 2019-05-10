@@ -10,14 +10,14 @@
     </q-btn>
 
     <q-toolbar-title shrink>
-      {{pageTitle}}
+      {{viewTitle}}
     </q-toolbar-title>
 
     <q-btn
       flat
       dense
       round
-      @click="page.save()"
+      @click="view.save()"
       aria-label="Save"
     >
       <q-icon name="save" />
@@ -27,7 +27,7 @@
       flat
       dense
       round
-      @click="page.destroy()"
+      @click="view.destroy()"
       aria-label="Save"
     >
       <q-icon name="delete" />

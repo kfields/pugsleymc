@@ -1,9 +1,12 @@
 <template>
-  <q-page padding class="fields">
+  <q-page padding>
+    <div v-if="$apollo.loading">Loading..</div>
+    <div v-else class="fields">
       <q-input outlined autocomplete="username" v-model="user.username" label="Username" />
       <q-input outlined autocomplete="email" v-model="user.email" label="Email" />
       <q-input outlined autocomplete="firstname" v-model="user.firstName" label="First Name" />
       <q-input outlined autocomplete="lastname" v-model="user.lastName" label="Last Name" />
+    </div>
   </q-page>
 </template>
 
@@ -68,7 +71,7 @@ export default {
       console.log('Saved')
     },
     onSwitch () {
-      this.setPage(this)
+      this.setView(this)
       this.setToolbar(Toolbar)
     }
   }

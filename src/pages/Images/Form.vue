@@ -2,6 +2,7 @@
   <div class="fields">
       <q-input outlined autocomplete="title" v-model="image.title" label="Title" />
       <q-input outlined autocomplete="filename" v-model="image.filename" label="Filename" />
+      <q-img :src="imgSrc" style="height: 140px; max-width: 150px"/>
   </div>
 </template>
 
@@ -24,6 +25,14 @@ export default {
   },
   data () {
     return {
+    }
+  },
+  computed: {
+    imgSrc: function () {
+      if (this.image.filename.length === 0) {
+        return 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+      }
+      return process.env.SERVER_URL + '/images/' + this.image.filename + '?w=200&h=160'
     }
   },
   mounted () {

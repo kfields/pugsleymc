@@ -1,5 +1,7 @@
 const state = {
   leftDrawerOpen: false,
+  view: null,
+  viewTitle: '',
   page: null,
   pageTitle: '',
   toolbar: null,
@@ -9,6 +11,8 @@ const state = {
 
 const getters = {
   leftDrawerOpen: (state) => state.leftDrawerOpen,
+  view: (state) => state.view,
+  viewTitle: (state) => state.viewTitle,
   page: (state) => state.page,
   pageTitle: (state) => state.pageTitle,
   toolbar: (state) => state.toolbar,
@@ -22,6 +26,12 @@ const actions = {
   },
   toggleLeftDrawer: ({ commit, state }) => {
     commit('setLeftDrawerOpen', !state.leftDrawerOpen)
+  },
+  setView: ({ commit }, data) => {
+    commit('view', data)
+  },
+  setViewTitle: ({ commit }, data) => {
+    commit('viewTitle', data)
   },
   setPage: ({ commit }, data) => {
     commit('page', data)
@@ -43,6 +53,12 @@ const actions = {
 const mutations = {
   setLeftDrawerOpen: (state, data) => {
     state.leftDrawerOpen = data
+  },
+  view: (state, data) => {
+    state.view = data
+  },
+  viewTitle: (state, data) => {
+    state.viewTitle = data
   },
   page: (state, data) => {
     state.page = data

@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     editBody () {
+      this.setEdited({ object: this.post, prop: 'body' })
       this.$router.push({ name: 'html', params: { object: this.post, prop: 'body' } })
     },
     stripTags (str) {

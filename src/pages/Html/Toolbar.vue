@@ -143,7 +143,7 @@
         </q-btn>
 
         <q-btn flat
-          @click="$router.push('/text')"
+          @click="view.editText"
         >
           <q-icon name="mdi-language-html5" />
         </q-btn>

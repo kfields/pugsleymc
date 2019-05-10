@@ -10,7 +10,7 @@
     </q-btn>
 
     <q-toolbar-title shrink>
-      {{pageTitle}}
+      {{viewTitle}}
     </q-toolbar-title>
 
     <q-btn

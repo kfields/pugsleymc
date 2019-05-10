@@ -9,11 +9,15 @@
       <q-icon name="mdi-chevron-left" />
     </q-btn>
 
+    <q-toolbar-title shrink>
+      {{viewTitle}}
+    </q-toolbar-title>
+
     <q-btn
       flat
       dense
       round
-      @click="page.save()"
+      @click="view.save()"
       aria-label="Save"
     >
       <q-icon name="save" />

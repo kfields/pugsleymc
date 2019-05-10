@@ -10,8 +10,6 @@ import Toolbar from './Toolbar'
 
 import CodeMirror from 'codemirror'
 import 'codemirror/lib/codemirror.css'
-// import 'codemirror/theme/monokai.css'
-// import 'codemirror/mode/javascript/javascript.js'
 import 'codemirror/mode/xml/xml.js'
 
 export default {
@@ -38,10 +36,10 @@ export default {
   },
   beforeDestroy () {
     this.edited.object[this.edited.prop] = this.myeditor.getValue()
-    // this.myeditor.destroy()
   },
   methods: {
     onSwitch () {
+      this.setView(this)
       this.setEditor(this.myeditor)
       this.setToolbar(Toolbar)
     }
