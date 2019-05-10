@@ -1,8 +1,8 @@
 <template>
   <q-page padding>
     <form @submit.prevent="handleSubmit">
-        <q-input autocomplete="username" v-model="username" type="username" float-label="Username" />
-        <q-input autocomplete="current-password" v-model="password" type="password" float-label="Password" />
+        <q-input autocomplete="username" v-model="username" type="username" label="Username" />
+        <q-input autocomplete="current-password" v-model="password" type="password" label="Password" />
         <q-btn flat color="primary" type="submit" label="Submit" />
     </form>
   </q-page>
