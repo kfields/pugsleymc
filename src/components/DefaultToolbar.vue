@@ -11,7 +11,7 @@
     </q-btn>
 
     <q-toolbar-title>
-      {{viewTitle}}
+      {{view.title}}
     </q-toolbar-title>
   </q-toolbar>
 </template>

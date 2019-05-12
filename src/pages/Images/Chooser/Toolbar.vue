@@ -13,26 +13,6 @@
       {{view.title}}
     </q-toolbar-title>
 
-    <q-btn
-      flat
-      dense
-      round
-      @click="view.save()"
-      aria-label="Save"
-    >
-      <q-icon name="save" />
-    </q-btn>
-
-    <q-btn
-      flat
-      dense
-      round
-      @click="view.destroy()"
-      aria-label="Save"
-    >
-      <q-icon name="delete" />
-    </q-btn>
-
   </q-toolbar>
 </template>
 

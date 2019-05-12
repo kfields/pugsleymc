@@ -7,29 +7,27 @@ export default {
         return this.$store.getters['leftDrawerOpen']
       },
       set: function (val) {
-        this.$store.commit('setLeftDrawerOpen', val)
+        this.$store.commit('leftDrawerOpen', val)
       }
     },
     ...mapGetters([
       'view',
-      'viewTitle',
       'page',
-      'pageTitle',
       'toolbar',
-      'editor',
-      'edited'
+      '$editor',
+      'edited',
+      '$image'
     ])
   },
   methods: {
     ...mapActions([
       'setView',
-      'setViewTitle',
       'setPage',
-      'setPageTitle',
       'setLeftDrawerOpen',
       'setToolbar',
       'setEditor',
-      'setEdited'
+      'setEdited',
+      'setImage'
     ])
   }
 }

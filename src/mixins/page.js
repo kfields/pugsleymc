@@ -4,7 +4,7 @@ import Toolbar from 'components/DefaultToolbar'
 
 export default {
   mounted () {
-    this.setViewTitle(this.title)
+    this.setView(this)
     this.onSwitch()
     /*
     if (this.persist) {

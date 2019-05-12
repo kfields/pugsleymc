@@ -1,6 +1,6 @@
 <template>
   <q-toolbar>
-    <editor-menu-bar :editor="editor">
+    <editor-menu-bar :editor="$editor">
       <div class="menubar" slot-scope="{ commands, isActive }">
         <q-btn
           push
@@ -169,10 +169,12 @@ export default {
       this.$router.go(-1)
     },
     showImagePrompt (command) {
+      this.view.showImagePrompt(command)
+      /*
       const src = prompt('Enter the url of your image here')
       if (src !== null) {
         command({ src })
-      }
+      } */
     }
   }
 }

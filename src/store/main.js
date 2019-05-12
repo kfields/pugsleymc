@@ -1,79 +1,71 @@
 const state = {
   leftDrawerOpen: false,
   view: null,
-  viewTitle: '',
   page: null,
-  pageTitle: '',
   toolbar: null,
   editor: null,
-  edited: null
+  edited: null,
+  image: null
 }
 
 const getters = {
   leftDrawerOpen: (state) => state.leftDrawerOpen,
   view: (state) => state.view,
-  viewTitle: (state) => state.viewTitle,
   page: (state) => state.page,
-  pageTitle: (state) => state.pageTitle,
   toolbar: (state) => state.toolbar,
-  editor: (state) => state.editor,
-  edited: (state) => state.edited
+  $editor: (state) => state.editor,
+  edited: (state) => state.edited,
+  $image: (state) => state.image
 }
 
 const actions = {
-  setLeftDrawerOpen: (context, value) => {
-    context.commit('setLeftDrawerOpen', value)
+  setLeftDrawerOpen: ({ commit }, value) => {
+    commit('leftDrawerOpen', value)
   },
   toggleLeftDrawer: ({ commit, state }) => {
-    commit('setLeftDrawerOpen', !state.leftDrawerOpen)
+    commit('leftDrawerOpen', !state.leftDrawerOpen)
   },
   setView: ({ commit }, data) => {
     commit('view', data)
   },
-  setViewTitle: ({ commit }, data) => {
-    commit('viewTitle', data)
-  },
   setPage: ({ commit }, data) => {
     commit('page', data)
   },
-  setPageTitle: ({ commit }, data) => {
-    commit('pageTitle', data)
-  },
   setToolbar: (context, toolbar) => {
-    context.commit('setToolbar', toolbar)
+    context.commit('toolbar', toolbar)
   },
   setEditor: (context, editor) => {
-    context.commit('setEditor', editor)
+    context.commit('editor', editor)
   },
   setEdited: (context, edited) => {
-    context.commit('setEdited', edited)
+    context.commit('edited', edited)
+  },
+  setImage: (context, image) => {
+    context.commit('image', image)
   }
 }
 
 const mutations = {
-  setLeftDrawerOpen: (state, data) => {
+  leftDrawerOpen: (state, data) => {
     state.leftDrawerOpen = data
   },
   view: (state, data) => {
     state.view = data
   },
-  viewTitle: (state, data) => {
-    state.viewTitle = data
-  },
   page: (state, data) => {
     state.page = data
   },
-  pageTitle: (state, data) => {
-    state.pageTitle = data
-  },
-  setToolbar: (state, toolbar) => {
+  toolbar: (state, toolbar) => {
     state.toolbar = toolbar
   },
-  setEditor: (state, editor) => {
+  editor: (state, editor) => {
     state.editor = editor
   },
-  setEdited: (state, edited) => {
+  edited: (state, edited) => {
     state.edited = edited
+  },
+  image: (state, image) => {
+    state.image = image
   }
 }
 export default {

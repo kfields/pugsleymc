@@ -81,7 +81,6 @@ export default {
       })
     },
     onSwitch () {
-      this.setView(this)
       this.setToolbar(Toolbar)
     }
   }

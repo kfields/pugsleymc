@@ -1,0 +1,60 @@
+<template>
+  <q-card>
+    <div v-if="$apollo.loading">Loading..</div>
+    <div v-else class="q-pa-md row items-start q-gutter-md">
+      <ImageCard v-for="edge in allImages.edges" :key="edge.id" :image="edge.node" @click.native="select(edge.node)" clickable/>
+    </div>
+  </q-card>
+</template>
+
+<style>
+</style>
+
+<script>
+import { UiMixin } from 'src/mixins'
+import ImageCard from './ImageCard'
+import gql from 'graphql-tag'
+const imageQuery = gql`
+query imageQuery {
+  allImages {
+    edges {
+      node {
+        id
+        title
+        filename
+      }
+    }
+  }
+}
+`
+export default {
+  name: 'ImageChooser',
+  mixins: [ UiMixin ],
+  props: ['select'],
+  components: {
+    ImageCard
+  },
+  data () {
+    return {
+      title: 'Images',
+      authorId: this.$route.params.authorId,
+      maximizedToggle: true
+    }
+  },
+  apollo: {
+    allImages: {
+      query: imageQuery,
+      fetchPolicy: 'network-only',
+      variables () {
+        return { authorId: this.authorId }
+      }
+    }
+  },
+  methods: {
+    selectImage (image) {
+      this.setImage(image)
+      this.$router.go(-1)
+    }
+  }
+}
+</script>

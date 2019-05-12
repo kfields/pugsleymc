@@ -20,6 +20,7 @@ const routes = [
       { path: 'images/:id', component: () => import('pages/Images/Update/Index.vue'), props: true },
       { path: 'html', name: 'html', component: () => import('pages/Html/Index.vue'), props: true },
       { path: 'text', name: 'text', component: () => import('pages/Text/Index.vue'), props: true },
+      { path: 'imagechooser', name: 'imagechooser', component: () => import('pages/Images/Chooser/Index.vue'), props: true },
       { path: 'users/:id', component: () => import('pages/Users/Update/Index.vue'), props: true }
     ]
   }
