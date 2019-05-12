@@ -52,7 +52,10 @@ module.exports = function (ctx) {
         'QDialog',
         'QCard',
         'QCardSection',
-        'QCardActions'
+        'QCardActions',
+        'QBar',
+        'QSpace',
+        'QTooltip'
       ],
 
       directives: [

@@ -12,6 +12,9 @@ import CodeMirror from 'codemirror'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/xml/xml.js'
 
+import { html_beautify } from 'js-beautify'
+const beautify = html_beautify
+
 export default {
   mixins: [ UiMixin, PageMixin ],
   props: [],
@@ -32,7 +35,7 @@ export default {
       matchBrackets: true,
       tabSize: 2
     })
-    myeditor.setValue(this.edited.object[this.edited.prop])
+    myeditor.setValue(beautify(this.edited.object[this.edited.prop]))
   },
   beforeDestroy () {
     this.edited.object[this.edited.prop] = this.myeditor.getValue()

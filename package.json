@@ -27,6 +27,7 @@
     "dotenv": "^7.0.0",
     "graphql": "^14.3.0",
     "graphql-tag": "^2.10.1",
+    "js-beautify": "^1.10.0",
     "jwt-decode": "^2.2.0",
     "quasar": "^1.0.0-beta.23",
     "tiptap": "^1.19.1",

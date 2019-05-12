@@ -1,5 +1,12 @@
 <template>
   <q-card>
+    <q-bar class="bg-primary text-white">
+      <div>Insert Image</div>
+      <q-space />
+      <q-btn dense flat icon="close" v-close-popup>
+        <q-tooltip>Close</q-tooltip>
+      </q-btn>
+    </q-bar>
     <div v-if="$apollo.loading">Loading..</div>
     <div v-else class="q-pa-md row items-start q-gutter-md">
       <ImageCard v-for="edge in allImages.edges" :key="edge.id" :image="edge.node" @click.native="select(edge.node)" clickable/>
