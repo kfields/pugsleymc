@@ -1,6 +1,6 @@
 <template>
   <q-card>
-    <q-bar class="bg-primary text-white">
+    <q-bar class="bg-black text-white">
       <div>Insert Image</div>
       <q-space />
       <q-btn dense flat icon="close" v-close-popup>
