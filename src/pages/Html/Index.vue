@@ -36,7 +36,7 @@ import {
 export default {
   name: 'Html',
   mixins: [ UiMixin, PageMixin ],
-  props: ['object', 'prop'],
+  props: ['id', 'prop'],
   components: {
     EditorContent,
     ImageChooser
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     editText () {
-      this.$router.push({ name: 'text', params: { object: this.object, prop: 'body', back: this.$route } })
+      this.$router.push(`/pages/${this.id}/text`)
     },
     showImagePrompt (command) {
       // this.$router.push({ name: 'imagechooser' })

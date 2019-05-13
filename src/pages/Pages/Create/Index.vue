@@ -22,6 +22,7 @@ export default {
     return {
       title: 'New Page',
       post: {
+        id: '',
         title: '',
         summary: '',
         body: ''

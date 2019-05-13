@@ -23,6 +23,7 @@ export default {
     ...mapActions([
       'setView',
       'setPage',
+      'toggleLeftDrawer',
       'setLeftDrawerOpen',
       'setToolbar',
       'setEditor',

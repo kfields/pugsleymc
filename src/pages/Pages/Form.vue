@@ -19,7 +19,9 @@ export default {
     post: {
       default () {
         return {
+          id: '',
           title: '',
+          summary: '',
           body: ''
         }
       }
@@ -38,7 +40,7 @@ export default {
   methods: {
     editBody () {
       this.setEdited({ object: this.post, prop: 'body' })
-      this.$router.push({ name: 'html', params: { object: this.post, prop: 'body' } })
+      this.$router.push(`/pages/${this.post.id}/html`)
     },
     stripTags (str) {
       if ((str === null) || (str === '')) {

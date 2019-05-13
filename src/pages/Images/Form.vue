@@ -1,7 +1,7 @@
 <template>
   <div class="fields">
       <q-input outlined autocomplete="title" v-model="image.title" label="Title" />
-      <q-input outlined autocomplete="filename" v-model="image.filename" label="Filename" />
+      <q-input outlined autocomplete="filename" v-model="image.filename" label="Filename" readonly/>
       <q-img :src="imgSrc" style="height: 140px; max-width: 150px"/>
   </div>
 </template>

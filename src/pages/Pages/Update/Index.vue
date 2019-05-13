@@ -22,6 +22,7 @@ export default {
       query: gql`
         query postQuery($id: ID!) {
           post(id: $id) {
+            id
             title
             slug
             summary

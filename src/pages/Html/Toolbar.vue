@@ -1,14 +1,15 @@
 <template>
-  <q-toolbar>
     <editor-menu-bar :editor="$editor">
-      <div class="menubar" slot-scope="{ commands, isActive }">
+
+      <q-toolbar class="menubar" slot-scope="{ commands, isActive }">
         <q-btn
-          push
-          round
+          flat
+          dense
           @click="$router.go(-1)"
         >
           <q-icon name="mdi-chevron-left" />
         </q-btn>
+<q-separator vertical inset />
 
         <q-btn flat
           class="menubar__button"
@@ -148,10 +149,10 @@
           <q-icon name="mdi-language-html5" />
         </q-btn>
 
-      </div>
+      </q-toolbar>
+
     </editor-menu-bar>
 
-  </q-toolbar>
 </template>
 
 <script>

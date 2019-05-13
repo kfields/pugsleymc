@@ -18,7 +18,6 @@
 
 <script>
 import UiMixin from 'src/mixins/ui'
-import { mapActions } from 'vuex'
 export default {
   name: 'DefaultToolbar',
   mixins: [
@@ -26,9 +25,6 @@ export default {
   ],
   props: [],
   methods: {
-    ...mapActions([
-      'toggleLeftDrawer'
-    ])
   }
 }
 </script>
