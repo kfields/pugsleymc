@@ -94,6 +94,16 @@ module.exports = function (ctx) {
             'process.env': ctx.dev ? webenv('dev') : webenv('pro')
           })
         ])
+        if(!ctx.dev) {
+          cfg.plugins.push(
+            new CopyWebpackPlugin([
+              {
+                from: '_redirects',
+                to: cfg.output.path
+              }
+            ])  
+          )
+        }
       }
     },
 
