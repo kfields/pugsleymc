@@ -21,7 +21,7 @@
     "apollo-link": "^1.2.11",
     "apollo-link-error": "^1.1.10",
     "apollo-link-http": "^1.5.14",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "codemirror": "^5.46.0",
     "copy-webpack-plugin": "^5.0.3",
     "dotenv": "^7.0.0",
