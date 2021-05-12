@@ -22,7 +22,7 @@
     "apollo-link-error": "^1.1.10",
     "apollo-link-http": "^1.5.14",
     "axios": "^0.18.0",
-    "codemirror": "^5.46.0",
+    "codemirror": "^5.58.2",
     "copy-webpack-plugin": "^5.0.3",
     "dotenv": "^7.0.0",
     "graphql": "^14.3.0",
